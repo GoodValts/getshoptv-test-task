@@ -24,7 +24,7 @@ const Services = () => {
           <p className={styles.serviceText}>{service}</p>
         </div>
       ))}
-      <button className={styles.button}>Заказать звонок</button>
+      <button className={styles.button}>Отправить</button>
     </section>
   );
 };
