@@ -1,1 +1,79 @@
 @import "../../app/general";
+
+.section {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background-color: $color-gray04;
+}
+
+.container {
+  position: relative;
+  width: 1220px;
+  box-sizing: border-box;
+  margin: 72px auto 54px auto;
+  padding: 42px 30px;
+}
+
+.content {
+  max-width: 497px;
+}
+
+.header {
+  @include font-h1;
+  margin-bottom: 32px;
+}
+
+.serviceBlock {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background-color: $color-orange;
+  border-radius: 50%;
+  padding: 4px;
+  margin-right: 16px;
+}
+
+.arrowIcon {
+  width: 11px;
+  height: 11px;
+}
+
+.serviceText {
+  max-width: 445px;
+  @include font-body1;
+  word-break: break-word;
+}
+
+.button {
+  @include font-button;
+  font-size: 14px;
+  line-height: 24px;
+  color: $color-white;
+  background-color: $color-black;
+  border: 0px;
+  border-radius: 10px;
+  padding: 12px 45px;
+  margin-top: 60px;
+
+  @include onHover {
+    cursor: pointer;
+    background-color: $color-gray01;
+  }
+}
+
+.backgroundImage {
+  position: absolute;
+  width: 721px;
+  height: 482px;
+  margin-bottom: 23px;
+  right: -200px;
+  top: calc(50% - 241px);
+}

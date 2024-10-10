@@ -21,8 +21,10 @@ const Header = () => {
         <nav className={styles.nav}>
           <ul className={styles.navList}>
             {navArr.map((el) => (
-              <li className={styles.navItem} key={el.link}>
-                <a href={`#${el.link}`}>{el.name}</a>
+              <li key={el.link}>
+                <a className={styles.navItem} href={`#${el.link}`}>
+                  {el.name}
+                </a>
               </li>
             ))}
           </ul>

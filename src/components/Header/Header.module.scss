@@ -1,10 +1,63 @@
 @import "../../app/general";
 
 .header {
-  background-color: teal;
+  background-color: $color-gray03;
+  padding: 32px 0;
 }
 
 .container {
+  display: flex;
+  justify-content: space-between;
   width: 1220px;
-  margin: 0 auto;
+  margin: 16px auto;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: $color-white;
+  border-radius: 10px;
+  color: $color-black;
+  font-size: 21.49px;
+  font-weight: 900;
+  line-height: 36.84px;
+  letter-spacing: 0.77px;
+  padding: 1px 48px;
+  margin: 0 30px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+.navItem {
+  @include font-button;
+  font-size: 14px;
+  text-decoration: none;
+  outline: none;
+  padding: 10px 32px;
+
+  @include onHover {
+    color: $color-orange;
+  }
+
+  &_active {
+    color: $color-orange-dark;
+    text-decoration: underline;
+  }
+}
+
+.burger {
+  display: none;
 }

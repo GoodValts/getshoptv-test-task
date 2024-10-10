@@ -1,5 +1,6 @@
 import styles from "./Services.module.scss";
 import arrowIcon from "../../assets/arrow-icon.svg";
+import backgroundImage from "../../assets/services-background.png";
 import Image from "next/image";
 
 const servicesArr = [
@@ -10,21 +11,32 @@ const servicesArr = [
 
 const Services = () => {
   return (
-    <section className={styles.container}>
-      <h2 className={styles.header}>
-        Подробные отчёты для вас и правообладателей
-      </h2>
-      {servicesArr.map((service) => (
-        <div className={styles.serviceBlock} key={service}>
-          <Image
-            className={styles.arrowIcon}
-            src={arrowIcon}
-            alt="service-icon"
-          />
-          <p className={styles.serviceText}>{service}</p>
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <h2 className={styles.header}>
+            Подробные отчёты для вас и правообладателей
+          </h2>
+          {servicesArr.map((service) => (
+            <div className={styles.serviceBlock} key={service}>
+              <div className={styles.arrow}>
+                <Image
+                  className={styles.arrowIcon}
+                  src={arrowIcon}
+                  alt="service-icon"
+                />
+              </div>
+              <p className={styles.serviceText}>{service}.</p>
+            </div>
+          ))}
+          <button className={styles.button}>Заказать звонок</button>
         </div>
-      ))}
-      <button className={styles.button}>Отправить</button>
+        <Image
+          src={backgroundImage}
+          alt="background-image"
+          className={styles.backgroundImage}
+        ></Image>
+      </div>
     </section>
   );
 };

@@ -1,1 +1,43 @@
 @import "../../app/general";
+
+.section {
+  display: flex;
+  justify-content: center;
+  background-color: $color-gray03;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1220px;
+  margin: 89px auto;
+  padding: 0px 30px;
+  box-sizing: border-box;
+}
+
+.header {
+  @include font-h2;
+}
+
+.partnersBlock {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 19px 40px 49px 40px;
+  gap: 81px;
+}
+
+.partner {
+  &:nth-child(1) {
+    width: 177px;
+  }
+
+  &:nth-child(2) {
+    width: 102px;
+  }
+
+  &:nth-child(3) {
+    width: 192px;
+  }
+}

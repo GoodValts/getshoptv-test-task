@@ -1,6 +1,98 @@
 @import "../../app/general";
 
+.section {
+  display: flex;
+  justify-content: center;
+  background-color: $color-gray03;
+}
+
 .container {
   width: 1220px;
-  margin: 0 auto;
+  margin: 68px auto;
+  padding: 0px 30px;
+  box-sizing: border-box;
+}
+
+.header {
+  @include font-h0;
+}
+
+.description {
+  @include font-h2;
+  font-weight: 400;
+  margin: 32px auto;
+}
+
+.callButton {
+  @include font-button;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 12px 45px;
+  color: $color-white;
+  background-color: $color-orange;
+  border-radius: 10px;
+  border: none;
+  margin: 48px 0;
+
+  @include onHover {
+    cursor: pointer;
+    background-color: $color-orange-dark;
+  }
+
+  &_disabled {
+    background-color: $color-gray02;
+  }
+}
+
+.addition {
+  display: flex;
+  justify-content: space-between;
+  margin: 132px 0 2px 0;
+}
+
+.additionHeader {
+  max-width: 460px;
+  @include font-h1;
+  margin-right: 140px;
+}
+
+.additionButtons {
+  display: flex;
+  padding: 4px;
+  border-radius: 14px;
+  background-color: $color-white;
+}
+
+.additionButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include font-h2;
+  width: 50%;
+  color: $color-gray01;
+  background-color: $color-white;
+  border: 0px;
+  border-radius: 10px;
+  padding: 10px 0;
+
+  @include onHover {
+    cursor: pointer;
+    color: $color-black;
+  }
+
+  &_active {
+    color: $color-white;
+    background-color: $color-black;
+
+    @include onHover {
+      color: $color-white;
+    }
+  }
+}
+
+.additionParagraph {
+  grid-column: 1 / 3;
+  @include font-body1;
+  margin-top: 32px;
+  margin-bottom: 27px;
 }

@@ -1,1 +1,63 @@
 @import "../../app/general";
+
+.section {
+  display: flex;
+  justify-content: center;
+  background-color: $color-gray04;
+}
+
+.container {
+  width: 1220px;
+  margin: 109px auto;
+  padding: 0px 30px;
+  box-sizing: border-box;
+}
+
+.header {
+  @include font-h1;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+  margin-bottom: 51px;
+}
+
+.imageBlock {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.imagePoint {
+  width: 10px;
+  height: 10px;
+  background-color: $color-orange;
+  border-radius: 50%;
+}
+
+.benefitsImageBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  background-color: $color-orange;
+  border-radius: 18px;
+}
+
+.benefitsImage {
+  width: 80px;
+  z-index: 1;
+}
+
+.imageLine {
+  position: absolute;
+  width: calc(100% - 10px);
+  border: 1px solid $color-orange;
+}

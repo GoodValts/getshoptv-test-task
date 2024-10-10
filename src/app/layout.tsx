@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.scss";
+import { Onest } from "next/font/google";
+
+const onestSans = Onest({
+  subsets: ["latin", "cyrillic"],
+});
 
 export const metadata: Metadata = {
   title: "GetShopTV test task",
@@ -13,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={onestSans.className}>{children}</body>
     </html>
   );
 }

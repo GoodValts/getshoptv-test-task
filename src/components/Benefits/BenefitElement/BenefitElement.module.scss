@@ -1,0 +1,34 @@
+@import "../../../app/general";
+
+.element {
+  width: 300px;
+  box-sizing: border-box;
+  padding: 32px;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background-color: $color-orange;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.arrowIcon {
+  width: 11px;
+  height: 11px;
+}
+
+.header {
+  @include font-h2;
+  margin-top: 20px;
+}
+
+.text {
+  @include font-body2;
+  white-space: pre-wrap;
+  margin-top: 16px;
+}
