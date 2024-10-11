@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import styles from "./About.module.scss";
+import Image from "next/image";
+import bgImage from "../../assets/about-background.png";
 
 const additionText = {
   operators:
@@ -60,6 +62,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <Image className={styles.image} src={bgImage} alt="background-image" />
     </section>
   );
 };

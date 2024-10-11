@@ -1,6 +1,8 @@
 @import "../../app/general";
 
 .section {
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   background-color: $color-gray03;
@@ -8,35 +10,57 @@
 
 .container {
   width: 1220px;
-  margin: 68px auto;
+  margin: 66px auto;
   padding: 0px 30px;
   box-sizing: border-box;
+  z-index: 1;
+
+  @include media-tablet {
+    padding: 0px 40px;
+    margin: 62px auto 29px auto;
+  }
 }
 
 .header {
   @include font-h0;
+
+  @include media-tablet {
+    font-size: 52px;
+    letter-spacing: calc(52px * -0.04);
+  }
 }
 
 .description {
   @include font-h2;
   font-weight: 400;
-  margin: 32px auto;
+  margin: 40px auto;
+
+  @include media-tablet {
+    @include font-body3;
+    margin: 32px auto;
+  }
 }
 
 .callButton {
   @include font-button;
   font-size: 14px;
   line-height: 24px;
-  padding: 12px 45px;
+  letter-spacing: 1px;
   color: $color-white;
   background-color: $color-orange;
   border-radius: 10px;
   border: none;
-  margin: 48px 0;
+  padding: 12px 45px;
+  margin: 40px 0;
 
   @include onHover {
     cursor: pointer;
     background-color: $color-orange-dark;
+  }
+
+  @include media-tablet {
+    width: 100%;
+    margin: 27px 0;
   }
 
   &_disabled {
@@ -47,13 +71,29 @@
 .addition {
   display: flex;
   justify-content: space-between;
-  margin: 132px 0 2px 0;
+  margin-top: 144px;
+
+  @include media-tablet {
+    margin-top: 93px;
+  }
 }
 
 .additionHeader {
   max-width: 460px;
   @include font-h1;
-  margin-right: 140px;
+
+  @include media-tablet {
+    max-width: 275px;
+    font-size: 28px;
+  }
+}
+
+.additionDetails {
+  max-width: 560px;
+
+  @include media-tablet {
+    max-width: 334px;
+  }
 }
 
 .additionButtons {
@@ -61,6 +101,11 @@
   padding: 4px;
   border-radius: 14px;
   background-color: $color-white;
+
+  @include media-tablet {
+    border-radius: 8.4px;
+    padding: 2px;
+  }
 }
 
 .additionButton {
@@ -80,9 +125,21 @@
     color: $color-black;
   }
 
+  @include media-tablet {
+    font-size: 14px;
+    line-height: 19px;
+    border-radius: 6px;
+    padding: 6px 0;
+  }
+
   &_active {
     color: $color-white;
     background-color: $color-black;
+
+    @include media-tablet {
+      font-size: 16px;
+      line-height: 20px;
+    }
 
     @include onHover {
       color: $color-white;
@@ -95,4 +152,15 @@
   @include font-body1;
   margin-top: 32px;
   margin-bottom: 27px;
+
+  @include media-tablet {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 16px;
+  }
+}
+
+.image {
+  position: absolute;
+  top: -71px;
 }

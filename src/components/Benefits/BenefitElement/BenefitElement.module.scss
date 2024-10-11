@@ -4,6 +4,11 @@
   width: 300px;
   box-sizing: border-box;
   padding: 32px;
+
+  @include media-tablet {
+    width: 216px;
+    padding: 24px;
+  }
 }
 
 .arrow {
@@ -14,21 +19,42 @@
   height: 24px;
   background-color: $color-orange;
   border-radius: 50%;
-  padding: 4px;
+  margin: 4px;
+
+  @include media-tablet {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .arrowIcon {
   width: 11px;
   height: 11px;
+
+  @include media-tablet {
+    width: 7px;
+    height: 7px;
+  }
 }
 
 .header {
   @include font-h2;
   margin-top: 20px;
+
+  @include media-tablet {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 18px;
+  }
 }
 
 .text {
   @include font-body2;
   white-space: pre-wrap;
   margin-top: 16px;
+
+  @include media-tablet {
+    font-size: 12px;
+    line-height: 16px;
+  }
 }

@@ -13,20 +13,38 @@
   box-sizing: border-box;
   margin: 72px auto 54px auto;
   padding: 42px 30px;
+
+  @include media-tablet {
+    padding: 0px 40px;
+    margin: 50px auto 71px auto;
+  }
 }
 
 .content {
   max-width: 497px;
+
+  @include media-tablet {
+    max-width: 334px;
+  }
 }
 
 .header {
   @include font-h1;
   margin-bottom: 32px;
+
+  @include media-tablet {
+    width: 320px;
+    font-size: 28px;
+  }
 }
 
 .serviceBlock {
   display: flex;
   margin-bottom: 20px;
+
+  @include media-tablet {
+    margin-bottom: 17px;
+  }
 }
 
 .arrow {
@@ -37,25 +55,42 @@
   height: 24px;
   background-color: $color-orange;
   border-radius: 50%;
-  padding: 4px;
-  margin-right: 16px;
+  margin: 4px;
+
+  @include media-tablet {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .arrowIcon {
   width: 11px;
   height: 11px;
+
+  @include media-tablet {
+    width: 7px;
+    height: 7px;
+  }
 }
 
 .serviceText {
   max-width: 445px;
   @include font-body1;
   word-break: break-word;
+  margin-left: 16px;
+
+  @include media-tablet {
+    max-width: 294px;
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
 .button {
   @include font-button;
   font-size: 14px;
   line-height: 24px;
+  letter-spacing: 1px;
   color: $color-white;
   background-color: $color-black;
   border: 0px;
@@ -67,6 +102,10 @@
     cursor: pointer;
     background-color: $color-gray01;
   }
+
+  @include media-tablet {
+    margin-top: 14px;
+  }
 }
 
 .backgroundImage {
@@ -76,4 +115,11 @@
   margin-bottom: 23px;
   right: -200px;
   top: calc(50% - 241px);
+
+  @include media-tablet {
+    width: 399px;
+    height: 266px;
+    right: -80px;
+    top: calc(50% - 133px);
+  }
 }

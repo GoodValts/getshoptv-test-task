@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 
 export const navArr: {
@@ -14,12 +14,30 @@ export const navArr: {
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const changeBurgerStatus = () => {
+    if (isOpen) {
+      setIsOpen(false);
+      return;
+    }
+    setIsOpen(true);
+  };
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "scroll";
+  }, [isOpen]);
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>Logo</div>
         <nav className={styles.nav}>
-          <ul className={styles.navList}>
+          <ul
+            className={
+              isOpen
+                ? `${styles.navList} ${styles.navList_visible}`
+                : styles.navList
+            }
+          >
             {navArr.map((el) => (
               <li key={el.link}>
                 <a className={styles.navItem} href={`#${el.link}`}>
@@ -28,12 +46,20 @@ const Header = () => {
               </li>
             ))}
           </ul>
-          <button
-            className={styles.burger}
-            onClick={() => (isOpen ? setIsOpen(false) : setIsOpen(true))}
-          >
+          <button className={styles.burger} onClick={changeBurgerStatus}>
             {Array.from({ length: 3 }).map((_, i) => (
-              <span key={i} className={`${styles.burgerLine}`}></span>
+              <span
+                key={i}
+                className={
+                  isOpen
+                    ? i === 0
+                      ? `${styles.burgerLine} ${styles.burgerLineRotate}`
+                      : i === 2
+                        ? `${styles.burgerLine} ${styles.burgerLineRotateReverse}`
+                        : styles.burgerLineHidden
+                    : styles.burgerLine
+                }
+              ></span>
             ))}
           </button>
         </nav>

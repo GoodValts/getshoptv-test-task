@@ -14,10 +14,22 @@
   margin: 89px auto;
   padding: 0px 30px;
   box-sizing: border-box;
+
+  @include media-tablet {
+    padding: 0 40px;
+    margin: 36px auto;
+  }
 }
 
 .header {
   @include font-h2;
+  margin-top: -16px;
+
+  @include media-tablet {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: -30px;
+  }
 }
 
 .partnersBlock {
@@ -26,18 +38,35 @@
   align-items: flex-end;
   margin: 19px 40px 49px 40px;
   gap: 81px;
+
+  @include media-tablet {
+    margin: 0 45px 36px 70px;
+    gap: 54px;
+  }
 }
 
 .partner {
   &:nth-child(1) {
     width: 177px;
+
+    @include media-tablet {
+      width: 121px;
+    }
   }
 
   &:nth-child(2) {
     width: 102px;
+
+    @include media-tablet {
+      width: 70px;
+    }
   }
 
   &:nth-child(3) {
     width: 192px;
+
+    @include media-tablet {
+      width: 131px;
+    }
   }
 }

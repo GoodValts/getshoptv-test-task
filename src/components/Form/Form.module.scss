@@ -9,19 +9,33 @@
 .container {
   width: 1220px;
   box-sizing: border-box;
-  margin: 126px auto 212px auto;
+  margin: 124px auto 212px auto;
   padding: 0px 30px 15px 30px;
+
+  @include media-tablet {
+    padding: 0px 40px;
+    margin: 48px auto 50px auto;
+  }
 }
 
 .header {
   @include font-h1;
   padding-bottom: 64px;
+
+  @include media-tablet {
+    font-size: 28px;
+    padding-bottom: 32px;
+  }
 }
 
 .form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0 40px;
+
+  @include media-tablet {
+    grid-template-columns: 1fr;
+  }
 }
 
 .question {
@@ -35,6 +49,12 @@
 
   &:focus {
     border-color: $color-black;
+  }
+
+  @include media-tablet {
+    min-height: 190px;
+    font-size: 14px;
+    line-height: 20px;
   }
 }
 
@@ -54,6 +74,12 @@
     color: $color-black;
   }
 
+  @include media-tablet {
+    margin-top: 32px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
   &_error {
     border-color: $color-error;
   }
@@ -67,6 +93,10 @@
   line-height: 13px;
   margin-top: 5px;
   margin-bottom: 14px;
+
+  @include media-tablet {
+    margin-bottom: 18px;
+  }
 }
 
 .checkboxBlock {
@@ -102,6 +132,11 @@
     cursor: pointer;
   }
 
+  @include media-tablet {
+    width: 12px;
+    height: 12px;
+  }
+
   &_tick {
     display: none;
   }
@@ -115,6 +150,11 @@
 
   @include onHover {
     cursor: pointer;
+  }
+
+  @include media-tablet {
+    width: auto;
+    margin-bottom: 62px;
   }
 
   &_link {
