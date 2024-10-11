@@ -81,12 +81,15 @@
     border-color: $color-orange;
   }
 
-  &:checked + .checkbox::after {
-    background-color: white;
+  &:checked + .checkbox .checkbox_tick {
+    display: block;
   }
 }
 
 .checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 14px;
   height: 14px;
   border-radius: 4px;
@@ -98,6 +101,10 @@
   @include onHover {
     cursor: pointer;
   }
+
+  &_tick {
+    display: none;
+  }
 }
 
 .label {
@@ -106,11 +113,15 @@
   @include font-body3;
   margin-bottom: 48px;
 
+  @include onHover {
+    cursor: pointer;
+  }
+
   &_link {
     text-decoration: underline;
 
     @include onHover {
-      cursor: pointer;
+      color: $color-gray01;
     }
   }
 }
