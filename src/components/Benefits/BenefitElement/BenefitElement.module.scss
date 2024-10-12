@@ -9,6 +9,11 @@
     width: 216px;
     padding: 24px;
   }
+
+  @include media-mobile {
+    width: 288px;
+    margin: 0 auto;
+  }
 }
 
 .arrow {
@@ -46,6 +51,11 @@
     line-height: 20px;
     margin-top: 18px;
   }
+
+  @include media-mobile {
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
 
 .text {
@@ -56,5 +66,11 @@
   @include media-tablet {
     font-size: 12px;
     line-height: 16px;
+  }
+
+  @include media-mobile {
+    font-size: 14px;
+    line-height: 18px;
+    white-space: normal;
   }
 }

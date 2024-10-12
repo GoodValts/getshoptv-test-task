@@ -11,13 +11,18 @@
 .container {
   width: 1220px;
   margin: 66px auto;
-  padding: 0px 30px;
+  padding: 0 30px;
   box-sizing: border-box;
   z-index: 1;
 
   @include media-tablet {
-    padding: 0px 40px;
+    padding: 0 40px;
     margin: 62px auto 29px auto;
+  }
+
+  @include media-mobile {
+    padding: 0 16px;
+    margin: 50px auto 12px auto;
   }
 }
 
@@ -27,6 +32,11 @@
   @include media-tablet {
     font-size: 52px;
     letter-spacing: calc(52px * -0.04);
+  }
+
+  @include media-mobile {
+    font-size: 36px;
+    letter-spacing: calc(36px * -0.04);
   }
 }
 
@@ -38,6 +48,10 @@
   @include media-tablet {
     @include font-body3;
     margin: 32px auto;
+  }
+
+  @include media-mobile {
+    font-size: 16px;
   }
 }
 
@@ -63,6 +77,10 @@
     margin: 27px 0;
   }
 
+  @include media-mobile {
+    margin: 80px 0;
+  }
+
   &_disabled {
     background-color: $color-gray02;
   }
@@ -76,6 +94,11 @@
   @include media-tablet {
     margin-top: 93px;
   }
+
+  @include media-mobile {
+    display: block;
+    margin-top: 0;
+  }
 }
 
 .additionHeader {
@@ -86,6 +109,12 @@
     max-width: 275px;
     font-size: 28px;
   }
+
+  @include media-mobile {
+    max-width: 100%;
+    font-size: 24px;
+    line-height: 31px;
+  }
 }
 
 .additionDetails {
@@ -93,6 +122,11 @@
 
   @include media-tablet {
     max-width: 334px;
+  }
+
+  @include media-mobile {
+    max-width: 100%;
+    margin-top: 22px;
   }
 }
 
@@ -103,8 +137,12 @@
   background-color: $color-white;
 
   @include media-tablet {
-    border-radius: 8.4px;
+    border-radius: 8px;
     padding: 2px;
+  }
+
+  @include media-mobile {
+    border-radius: 7px;
   }
 }
 
@@ -116,7 +154,7 @@
   width: 50%;
   color: $color-gray01;
   background-color: $color-white;
-  border: 0px;
+  border: 0;
   border-radius: 10px;
   padding: 10px 0;
 
@@ -132,6 +170,13 @@
     padding: 6px 0;
   }
 
+  @include media-mobile {
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 5px;
+    padding: 5px 0;
+  }
+
   &_active {
     color: $color-white;
     background-color: $color-black;
@@ -139,6 +184,11 @@
     @include media-tablet {
       font-size: 16px;
       line-height: 20px;
+    }
+
+    @include media-mobile {
+      font-size: 12px;
+      line-height: 15px;
     }
 
     @include onHover {
@@ -157,6 +207,12 @@
     font-size: 14px;
     line-height: 20px;
     margin-top: 16px;
+  }
+
+  @include media-mobile {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 24px;
   }
 }
 

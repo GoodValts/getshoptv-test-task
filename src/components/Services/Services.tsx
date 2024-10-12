@@ -15,7 +15,8 @@ const Services = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <h2 className={styles.header}>
-            Подробные отчёты для вас и правообладателей
+            Подробные отчёты{"\u00A0"}для{"\u00A0"}вас{"\u00A0"}и
+            правообладателей
           </h2>
           {servicesArr.map((service) => (
             <div className={styles.serviceBlock} key={service}>

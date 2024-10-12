@@ -15,8 +15,14 @@
   padding: 42px 30px;
 
   @include media-tablet {
-    padding: 0px 40px;
+    padding: 0 40px;
     margin: 50px auto 71px auto;
+  }
+
+  @include media-mobile {
+    overflow: hidden;
+    padding: 0 16px;
+    margin: 24px auto 51px auto;
   }
 }
 
@@ -25,6 +31,10 @@
 
   @include media-tablet {
     max-width: 334px;
+  }
+
+  @include media-mobile {
+    margin: 0 auto;
   }
 }
 
@@ -36,6 +46,12 @@
     width: 320px;
     font-size: 28px;
   }
+
+  @include media-mobile {
+    width: calc(100% - 20px);
+    font-size: 24px;
+    line-height: 31px;
+  }
 }
 
 .serviceBlock {
@@ -44,6 +60,10 @@
 
   @include media-tablet {
     margin-bottom: 17px;
+  }
+
+  @include media-mobile {
+    margin-bottom: 20px;
   }
 }
 
@@ -84,6 +104,11 @@
     font-size: 14px;
     line-height: 20px;
   }
+
+  @include media-mobile {
+    max-width: calc(100% - 42px);
+    line-height: 18px;
+  }
 }
 
 .button {
@@ -93,7 +118,7 @@
   letter-spacing: 1px;
   color: $color-white;
   background-color: $color-black;
-  border: 0px;
+  border: 0;
   border-radius: 10px;
   padding: 12px 45px;
   margin-top: 60px;
@@ -105,6 +130,11 @@
 
   @include media-tablet {
     margin-top: 14px;
+  }
+
+  @include media-mobile {
+    width: 100%;
+    margin-top: 12px;
   }
 }
 
@@ -121,5 +151,15 @@
     height: 266px;
     right: -80px;
     top: calc(50% - 133px);
+  }
+
+  @include media-mobile {
+    display: block;
+    position: relative;
+    width: 502px;
+    height: 335px;
+    right: -12px;
+    top: 0;
+    margin: 50px auto 0 auto;
   }
 }

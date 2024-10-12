@@ -12,12 +12,18 @@
   align-items: center;
   width: 1220px;
   margin: 89px auto;
-  padding: 0px 30px;
+  padding: 0 30px;
   box-sizing: border-box;
 
   @include media-tablet {
     padding: 0 40px;
     margin: 36px auto;
+  }
+
+  @include media-mobile {
+    display: block;
+    width: 100vw;
+    padding: 0 16px;
   }
 }
 
@@ -29,6 +35,13 @@
     font-size: 16px;
     line-height: 20px;
     margin-top: -30px;
+  }
+
+  @include media-mobile {
+    width: 166px;
+    font-size: 20px;
+    line-height: 26px;
+    margin-top: 28px;
   }
 }
 
@@ -43,6 +56,15 @@
     margin: 0 45px 36px 70px;
     gap: 54px;
   }
+
+  @include media-mobile {
+    position: relative;
+    min-width: 297px;
+    flex-wrap: wrap;
+    gap: 0 15px;
+    margin: 8px 0 40px 0;
+    left: -8px;
+  }
 }
 
 .partner {
@@ -52,6 +74,10 @@
     @include media-tablet {
       width: 121px;
     }
+
+    @include media-mobile {
+      width: 138px;
+    }
   }
 
   &:nth-child(2) {
@@ -60,6 +86,11 @@
     @include media-tablet {
       width: 70px;
     }
+
+    @include media-mobile {
+      width: 85px;
+      order: 3;
+    }
   }
 
   &:nth-child(3) {
@@ -67,6 +98,10 @@
 
     @include media-tablet {
       width: 131px;
+    }
+
+    @include media-mobile {
+      width: 138px;
     }
   }
 }
