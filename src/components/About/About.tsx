@@ -67,7 +67,12 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Image className={styles.image} src={bgImage} alt="background-image" />
+      <Image
+        className={styles.image}
+        src={bgImage}
+        alt="background-image"
+        priority={true}
+      />
     </section>
   );
 };

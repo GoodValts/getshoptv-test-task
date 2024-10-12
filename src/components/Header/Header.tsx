@@ -11,7 +11,11 @@ export const navArr: {
   { name: "Как работаем", link: "process" },
 ];
 
-const Header = () => {
+const Header = ({
+  visibleSection: visibleSection,
+}: {
+  visibleSection: string;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const changeBurgerStatus = () => {
@@ -40,7 +44,15 @@ const Header = () => {
           >
             {navArr.map((el) => (
               <li key={el.link}>
-                <a className={styles.navItem} href={`#${el.link}`}>
+                <a
+                  className={
+                    visibleSection === el.link
+                      ? `${styles.navItem} ${styles.navItem_active}`
+                      : styles.navItem
+                  }
+                  href={`#${el.link}`}
+                  onClick={changeBurgerStatus}
+                >
                   {el.name}
                 </a>
               </li>
@@ -62,6 +74,12 @@ const Header = () => {
               ></span>
             ))}
           </button>
+          <div
+            className={
+              isOpen ? styles.burgerBackground : styles.burgerBackground_closed
+            }
+            onClick={changeBurgerStatus}
+          ></div>
         </nav>
       </div>
     </header>

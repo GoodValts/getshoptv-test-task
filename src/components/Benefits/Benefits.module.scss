@@ -103,6 +103,7 @@
 
 .benefitsImage {
   width: 80px;
+  height: auto;
   z-index: 1;
 
   @include media-tablet {

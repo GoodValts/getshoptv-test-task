@@ -2,10 +2,26 @@ import styles from "./Benefits.module.scss";
 import Image from "next/image";
 import benefitsImage from "../../assets/benefits-image.svg";
 import BenefitElement from "./BenefitElement/BenefitElement";
+import { useEffect, useRef } from "react";
 
-const Benefits = () => {
+const Benefits = ({
+  observer: observer,
+}: {
+  observer: IntersectionObserver | null;
+}) => {
+  const benefitsRef = useRef(null);
+
+  useEffect(() => {
+    const ref = benefitsRef.current;
+    if (observer && ref) observer.observe(ref);
+
+    return () => {
+      if (observer && ref) observer.unobserve(ref);
+    };
+  });
+
   return (
-    <section className={styles.section} id="advantages">
+    <section className={styles.section} id="advantages" ref={benefitsRef}>
       <div className={styles.container}>
         <h2 className={styles.header}>
           Баланс между выручкой и удовлетворённостью пользователей

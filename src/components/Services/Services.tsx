@@ -4,6 +4,7 @@ import styles from "./Services.module.scss";
 import arrowIcon from "../../assets/arrow-icon.svg";
 import backgroundImage from "../../assets/services-background.png";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 const servicesArr = [
   "Выручка, CTR, показы и другие показатели в реальном времени",
@@ -11,9 +12,24 @@ const servicesArr = [
   "Ежемесячные автоматические отчёты для каждого правообладателя",
 ];
 
-const Services = () => {
+const Services = ({
+  observer: observer,
+}: {
+  observer: IntersectionObserver | null;
+}) => {
+  const servicesRef = useRef(null);
+
+  useEffect(() => {
+    const ref = servicesRef.current;
+    if (observer && ref) observer.observe(ref);
+
+    return () => {
+      if (observer && ref) observer.unobserve(ref);
+    };
+  });
+
   return (
-    <section className={styles.section} id="process">
+    <section className={styles.section} id="process" ref={servicesRef}>
       <div className={styles.container}>
         <div className={styles.content}>
           <h2 className={styles.header}>
@@ -43,6 +59,7 @@ const Services = () => {
           src={backgroundImage}
           alt="background-image"
           className={styles.backgroundImage}
+          priority={false}
         ></Image>
       </div>
     </section>

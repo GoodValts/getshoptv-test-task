@@ -168,4 +168,22 @@
       background-color: transparent;
     }
   }
+
+  &Background {
+    position: absolute;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    @include onHover {
+      cursor: pointer;
+    }
+
+    &_closed {
+      position: absolute;
+      display: none;
+    }
+  }
 }
