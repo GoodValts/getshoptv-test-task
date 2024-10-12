@@ -26,7 +26,7 @@ export default function Home() {
           setVisibleSections(
             visibleSections
               .filter((visibleEl) => visibleEl !== el.target.id)
-              .sort()
+              .sort(),
           );
         }
       });
@@ -37,7 +37,7 @@ export default function Home() {
     return () => {
       if (observer) observer.disconnect();
     };
-  }, [visibleSections, observer]);
+  }, [visibleSections]);
 
   return (
     <div className={styles.page}>
