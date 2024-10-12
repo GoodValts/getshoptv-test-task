@@ -28,7 +28,12 @@ const About = () => {
           <br />
           рекламной монетизации
         </p>
-        <button className={styles.callButton}>Заказать звонок</button>
+        <button
+          className={styles.callButton}
+          onClick={() => alert("Call button pressed")}
+        >
+          Заказать звонок
+        </button>
         <div className={styles.addition}>
           <h2 className={styles.additionHeader}>
             Дополнительные источники выручки для разных компаний

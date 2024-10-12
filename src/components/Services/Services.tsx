@@ -30,7 +30,12 @@ const Services = () => {
               <p className={styles.serviceText}>{service}.</p>
             </div>
           ))}
-          <button className={styles.button}>Заказать звонок</button>
+          <button
+            className={styles.button}
+            onClick={() => alert("Call button pressed")}
+          >
+            Заказать звонок
+          </button>
         </div>
         <Image
           src={backgroundImage}
