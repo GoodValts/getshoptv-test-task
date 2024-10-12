@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styles from "./Form.module.scss";
 import tickMarkIcon from "../../assets/tickmark-icon.svg";
+import { useState } from "react";
 
 const MockNavigation = (
   e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -13,6 +14,27 @@ const MockNavigation = (
 };
 
 const Form = () => {
+  const [error, setError] = useState("");
+
+  const validateInput = (string: string) => {
+    if (!string.trim().length) {
+      setError("Пустой адрес почты");
+      return;
+    }
+
+    if (string.split("@").length !== 2) {
+      setError("Адрес почты должен содержать 1 символ '@'");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(string)) {
+      setError("Неправильно указана почта");
+      return;
+    }
+
+    setError("");
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -21,13 +43,18 @@ const Form = () => {
           <textarea
             className={styles.question}
             placeholder="Напишите свой вопрос"
+            required={true}
           ></textarea>
           <input
-            className={styles.input}
+            className={
+              error ? `${styles.input} ${styles.input_error}` : styles.input
+            }
             placeholder="Введите e-mail"
             type="email"
+            required={true}
+            onChange={(event) => validateInput(event.target.value)}
           />
-          <p className={styles.error}></p>
+          <p className={styles.error}>{error}</p>
           <div className={styles.checkboxBlock}>
             <input
               className={styles.checkboxInput}

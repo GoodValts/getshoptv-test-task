@@ -101,6 +101,10 @@
 
   &_error {
     border-color: $color-error;
+
+    &:focus {
+      border-color: $color-error;
+    }
   }
 }
 

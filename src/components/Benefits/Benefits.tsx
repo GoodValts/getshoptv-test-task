@@ -5,7 +5,7 @@ import BenefitElement from "./BenefitElement/BenefitElement";
 
 const Benefits = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="advantages">
       <div className={styles.container}>
         <h2 className={styles.header}>
           Баланс между выручкой и удовлетворённостью пользователей

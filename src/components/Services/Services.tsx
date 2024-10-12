@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./Services.module.scss";
 import arrowIcon from "../../assets/arrow-icon.svg";
 import backgroundImage from "../../assets/services-background.png";
@@ -11,7 +13,7 @@ const servicesArr = [
 
 const Services = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="process">
       <div className={styles.container}>
         <div className={styles.content}>
           <h2 className={styles.header}>
